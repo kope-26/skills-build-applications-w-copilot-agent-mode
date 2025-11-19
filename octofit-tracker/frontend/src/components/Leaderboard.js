@@ -17,12 +17,26 @@ const Leaderboard = () => {
 
   return (
     <div>
-      <h2>Leaderboard</h2>
-      <ul>
-        {leaderboard.map((entry, idx) => (
-          <li key={idx}>{entry.team}: {entry.points} pts (Rank {entry.rank})</li>
-        ))}
-      </ul>
+      <h2 className="mb-4 text-success">Leaderboard</h2>
+      <table className="table table-striped table-bordered">
+        <thead className="table-dark">
+          <tr>
+            <th>Team</th>
+            <th>Points</th>
+            <th>Rank</th>
+          </tr>
+        </thead>
+        <tbody>
+          {leaderboard.map((entry, idx) => (
+            <tr key={idx}>
+              <td>{entry.team}</td>
+              <td>{entry.points}</td>
+              <td>{entry.rank}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <button className="btn btn-success" onClick={() => window.location.reload()}>Refresh</button>
     </div>
   );
 };

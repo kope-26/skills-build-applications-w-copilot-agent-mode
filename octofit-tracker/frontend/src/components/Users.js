@@ -17,12 +17,28 @@ const Users = () => {
 
   return (
     <div>
-      <h2>Users</h2>
-      <ul>
-        {users.map((user, idx) => (
-          <li key={idx}>{user.name} - {user.email} ({user.team})</li>
-        ))}
-      </ul>
+      <h2 className="mb-4 text-warning">Users</h2>
+      <table className="table table-striped table-bordered">
+        <thead className="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Team</th>
+            <th>Superhero</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user, idx) => (
+            <tr key={idx}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.team}</td>
+              <td>{user.is_superhero ? 'Yes' : 'No'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <button className="btn btn-warning" onClick={() => window.location.reload()}>Refresh</button>
     </div>
   );
 };
