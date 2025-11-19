@@ -7,11 +7,15 @@ import Teams from './components/Teams';
 import Users from './components/Users';
 import Workouts from './components/Workouts';
 
+import logo from './logo.svg';
 function App() {
   return (
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
-        <NavLink className="navbar-brand" to="/">OctoFit Tracker</NavLink>
+        <NavLink className="navbar-brand d-flex align-items-center" to="/">
+          <img src={logo} alt="OctoFit Logo" className="App-logo" />
+          OctoFit Tracker
+        </NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
